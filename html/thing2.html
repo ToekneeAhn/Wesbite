@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+
+<html>
+	<head>
+		<link rel = "stylesheet" href="/css/mystyles.css" >
+		
+		<title>
+			page 2
+		</title>
+				
+		<div class = "vertical-menu">
+			
+			<a href="/html/thing.html" >Page 1</a>
+			<a href="/html/thing2.html" class="active"> Page 2</a>
+			<a href="/html/thing3.html">Page 3</a>
+			<a href="/html/about.html">About</a>
+		</div>
+		
+		<h2> 
+			this is page 2
+		</h2>
+		
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script> <!-- LaTeX -->
+		
+	</head>
+	
+	<body>
+		<div class = "part1">
+			<img src = "/img/doot.jpg" alt = "skeleton trumpet" style="float:right; width:100px; height: 75px">
+			look at this skeleton with a trumpet
+			<br> 
+			<strong> doot </strong> 
+		
+		<br>
+		
+			<img src = "/img/doot.jpg" alt = "skeleton trumpet" style="float:left; width:100px; height: 75px">
+			now look at this skeleton with a trumpet but on the other side
+			<br> 
+			<span style = "font-size: 50px;"> <strong> doot </strong> </span>		 
+		</div>
+		<br>
+		
+		<div class = "math">
+			<h1 style = "font-family: Trebuchet, Sans-serif;"> Physics Post 1 </h1>
+			<h5 style = "font-family: Trebuchet, Sans-serif;"> July 18, 2019 <br> By Bony </h5>
+			
+			Maybe later
+			<p> 
+				$$\nabla ^2 \phi = -\frac{\rho}{\epsilon_0}$$
+			</p>
+		</div>
+		
+		<br>
+		
+		<div class = "math">
+			<h1 style = "font-family: Trebuchet, Sans-serif;"> Math Post 1 </h1>
+			<h5 style = "font-family: Trebuchet, Sans-serif;"> July 16, 2019 <br> By Bony </h5>
+			
+			Now for some math. Let's compute \( \cos{72^{\circ}} \). 
+			<p>
+				First, note that \( 72^{\circ} = \frac{2}{5} \pi \). Recall that the fifth roots of unity are given by \( z^5 = 1 \), or 
+				$$z = e^{\frac{2}{5} \pi k}, \; k \in \{0, 1, 2, 3, 4\}$$
+				From now on, we define \( z := e^{\frac{2}{5} \pi} \) and \( y := \cos{ \left(\frac{2}{5} \pi \right)}  \). 
+				Therefore, using Euler's identity,
+				\begin{align*}
+					y &= \textrm{Re} (z) \\
+					&= \frac{1}{2} (z + \bar{z}) \\
+					&= \frac{1}{2} \left( z+ \frac{1}{z} \right)
+				\end{align*} 
+				
+				We can factor the first equation as 
+				$$(z-1)(z^4 + z^3 + z^2 + z + 1) = 0$$
+				
+				We discard the first factor, as clearly \( z \ne 1\). Now, we apply the classic trick when dealing with polynomials that have symmetric 
+				coefficients. We divide both sides by \(z^2\) (which we can do because \( z \ne 0 )\), which gives 
+				$$ \left( z^2 + \frac{1}{z^2} \right) + \left(z + \frac{1}{z} \right) + 1 = 0$$
+				
+				This can be rewritten in terms of \( y \) with some quick manipulation. Note that \( (2y)^2 = z^2 + \frac{1}{z^2} + 2 \), so
+				$$(4y^2 - 2) + 2y + 1 = 0$$
+				
+				Solving this quadratic gives us our desired result: \( y = \frac{-1 \pm \sqrt{5}}{4} \). Since \( \frac{2}{5} \pi \) is in quadrant \(1\), 
+				we discard the negative root, leaving us with $$\cos{72^{\circ}} = \frac{-1 + \sqrt{5}}{4}$$
+				<br>
+				We can now find \( \cos{36^{\circ}} \) using the half-angle formula for cosine. As a corollary of that, we can compute the cosine of 
+				any integer multiple of \( 36^{\circ} \) using the Chebyshev Polynomials of the First Kind if we wanted to. Also, note the resemblance
+				to the <span style = "color:gold">golden ratio</span> \( \phi = \frac{1+\sqrt{5}}{2} \). It is easy to see that \( \cos{72^{\circ}} = \frac{\phi-1}{2} \). 
+				<br>
+				As a final note, there
+				is an easier way to obtain the same result using geometric methods. It involves an isosceles triangle wih angles of \(36^{\circ} \),
+				\(36^{\circ} \), and \(72^{\circ} \). Draw the angle bisector of one of the smaller angles, and use the angle bisector theorem and the
+				cosine law to finish. 
+				
+			</p>
+		</div>
+		
+		<form>
+			
+			<label for "com"> Add a comment! </label>
+			<br>
+			<textarea id = "comment" name = "comment" rows = "5" cols = "50">yuh</textarea>
+			<br>
+			<input type = "submit" value = "Submit!">
+		</form>
+	</body>
+	
+</html>
