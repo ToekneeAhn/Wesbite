@@ -42,6 +42,22 @@
 		<br>
 		
 		<div class = "math">
+			<h1 style = "font-family: Trebuchet, Sans-serif;"> Math Post 2 </h1>
+			<h5 style = "font-family: Trebuchet, Sans-serif;"> July 26, 2019 <br> By Bony </h5>
+			
+			<a class = "hideText" onclick="unhide()">Clique me to reveal hidden text</a>
+
+			<div class = "hidden" id="hidden" style= "display: none">
+				<p>
+					$$\textrm{mathematics}$$
+				</p>
+				There's no math here, but isn't hidden text cool?
+			</div>
+		</div>
+		
+		<br>
+		
+		<div class = "math">
 			<h1 style = "font-family: Trebuchet, Sans-serif;"> Physics Post 1 </h1>
 			<h5 style = "font-family: Trebuchet, Sans-serif;"> July 18, 2019 <br> By Bony </h5>
 			
@@ -102,6 +118,18 @@
 			<br>
 			<input type = "submit" value = "Submit!">
 		</form>
+		
+		<script>
+		function unhide() {
+		  var x = document.getElementById("hidden");
+		  if (x.style.display === "none") {
+			x.style.display = "block";
+		  } else {
+			x.style.display = "none";
+		  }
+		}
+		</script>
+		
 	</body>
 	
 </html>
