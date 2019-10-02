@@ -42,10 +42,135 @@
 		<br>
 		
 		<div class = "math">
+			<h1 style = "font-family: Trebuchet, Sans-serif;"> Math Post 3 </h1>
+			<h5 style = "font-family: Trebuchet, Sans-serif;"> July 28, 2019 <br> By Bony </h5>
+			
+			Here are some math problems I solved recently, roughly in order of difficulty. The next post will be physics.
+			
+			<br>
+			<br>
+			
+			1. In triangle \(ABC\), cevians \(AD\), \(BE\), and \(CF\) are concurrent at \(P\). Prove that $$\frac{PD}{AD}+\frac{PE}{BE}+\frac{PF}{CF}=1.$$
+			
+			
+			
+			<a class = "hideText" onclick="unhide('sol1')">Solution</a>
+			<div class = "hidden" id="sol1" style= "display: none">
+				<p>
+					This is a straightforward area ratio chase. Let \([XYZ]\) denote the area of a polygon \(XYZ\). Then we have 
+					\(\frac{PD}{AP} = \frac{[PBC]}{[ABC]}\), \(\frac{PE}{BE} = \frac{[APC]}{[ABC]}\), and \(\frac{PF}{CF} = \frac{[AFB]}{[ABC]}\)
+					from the fact that areas are in the same ratio as line segments. Summing these gives the desired result, as \(\triangle PBC\), 
+					\(\triangle APC\), and \(\triangle AFB\) are disjoint and cover all of triangle \(ABC\). 
+				</p>
+			</div>
+			
+			<br>
+			<br>
+			
+			2. A regular n-gon with vertices \(A_1, A_2, \dots A_n\) is inscribed in a circle, and \(P\) is an arbitrary point on the same circle. 
+			Show that $$\sum_{k=1}^{n} |PA_k|^2$$ is constant for all \(P\). 
+			
+			<br>
+			
+			<a class = "hideText" onclick="unhide('sol2')">Solution</a>
+			<div class = "hidden" id="sol2" style= "display: none">
+				<p>
+					Without loss of generality, set the \(n^\textrm{th}\) roots of unity as the polygon. Let \( A_k = z^k\), where \(z^n = 1\). Then,
+					\begin{align*}
+						|PA_k|^2 &= (p-z^k)(\bar{p}-\bar{z}^2) \\
+						&= 2 - p \bar{z} - \bar{p}z \\
+						&= 2 - p \bar{z} - \frac{z}{p}
+					\end{align*}
+					where in the last line we have used the fact that \(z \bar{z} =1\) for all \(|z|=1\). The desired sum is therefore 
+					\begin{align*}
+						\sum_{k=1}^{n}2 - \sum_{k=1}^{n} p \bar{z} - \sum_{k=1}^{n} \frac{z}{p} &= 2n - p\sum_{k=1}^{n} \bar{z} - \frac{1}{p}\sum_{k=1}^{n} z \\
+						&= 2n
+					\end{align*}
+					where we have used the fact that \(\sum_{k=1}^{n} z = \sum_{k=1}^{n} \bar{z} = 0\). This easily follows from Vieta on 
+					\(z^n-1=0\), which shows that the sum of the roots of unity is \(0\) (in general a very useful fact). Thus, the sum is independent
+					of p, as desired.
+				</p>
+			</div>
+			
+			<br>
+			<br>
+			
+			3. Let \(z^n = 1\), where \(n\) is an odd positive integer. Prove that $$\sum_{k=0}^n \frac{1}{z^k+1} = \frac{n}{2}.$$
+			
+			
+			
+			<a class = "hideText" onclick="unhide('sol3')">Solution</a>
+			<div class = "hidden" id="sol3" style= "display: none">
+				<p>
+					Note that \(z^k = \frac{1}{z^{n-k}}\) for all \(k\). Therefore, we can pair up the terms (except the last one) in the following manner:
+					\begin{align*}
+						&= \frac{1}{z+1} + \frac{1}{z^2+1} + \frac{1}{z^3+1} + \dots + \frac{1}{z^{n-3}+1} + \frac{1}{z^{n-2}+1} + \frac{1}{z^{n-1}+1}  \\
+						&= \frac{1}{z+1} + \frac{1}{z^2+1} + \frac{1}{z^3+1} + \dots + \frac{1}{\frac{1}{z}+1} + \frac{1}{\frac{1}{z^2}+1} + \frac{1}{\frac{1}{z^3}+1}  \\
+						&= \frac{1}{z+1} + \frac{1}{z^2+1} + \frac{1}{z^3+1} + \dots + \frac{z}{z+1} + \frac{z^2}{z^2+1} + \frac{z^3}{z^3+1}  \\
+					\end{align*}
+					Written this way, it's obvious we should pair the \(k^{\textrm{th}}\) term with term \(n-k-1\) because they add to \(1\). Since \(n\) is odd, 
+					there are \(\frac{n-1}{2}\) such pairs, which sum to \( \frac{n-1}{2} \). Finally, we tack on the very last term, which is just \( \frac{1}{2} \)
+					because \(z^n=1\), and we're done.
+				</p>
+			</div>
+			<br>
+			<a class = "hideText" onclick="unhide('rem1')">Remark</a>
+
+			<div class = "hidden" id="rem1" style= "display: none">
+				<p>
+					After struggling with this problem for 20 minutes, I thought of the solution (pairing the terms) in the middle of eating dinner. Some advice: eat dinner 
+					and you'll solve more math problems.
+				</p>
+			</div>
+			
+			<br>
+			<br>
+			
+			4. Let \(H\) be the orthocenter of triangle \(ABC\). The tangents from \(A\) to the circle with diameter \(BC\) touch the circle at 
+			\(P\) and \(Q\). Prove that \(P\), \(Q\), and \(H\) are collinear. 
+			
+			<br>
+			
+			<a class = "hideText" onclick="unhide('sol4')">Solution</a>
+			<div class = "hidden" id="sol4" style= "display: none;">
+				<p>
+					<img src="../img/p4.png" alt="problem 4" style="width: 75%; height: auto;">
+					<br>
+					
+					Let \(D\) and \(E\) be the feet of the altitudes from \(A\) to \(BC\) and \(B\) to \(AC\), respectively. Let \(\omega_1\) 
+					be the circle with diameter \(BC\), \(\omega_2\) be the circumcircle of \(\triangle ABE\), and \(\omega_3\) be the circumcircle 
+					of \(\triangle APQ\).
+					<br>
+					<br>
+					<em>Claim:</em> \(E\) lies on \(\omega_1\) and \(D\) lies on \(\omega_2\)
+					<br>
+					<em>Proof:</em> Equal right angles, so cyclic quadrilateral. Analagous reasoning for the second part of the claim.  
+					<br>
+					<br>
+					
+					By the radical axis theorem on \(\omega_1\), \(\omega_2\), and \(\omega_3\), we find that \(PQ\), \(AD\), and \(BE\) are concurrent. 
+					Since \(AD \cap BE = H\) and they intersect on \(PQ\), it follows that \(P\), \(Q\), and \(H\) are collinear.
+				</p>
+			</div>
+			<br>
+			<a class = "hideText" onclick="unhide('rem2')">Remark</a>
+
+			<div class = "hidden" id="rem2" style= "display: none">
+				<p>
+					Cool problem with a very short solution, though somewhat easy in retrospect. Radical axis theorem solutions usually go like that, where the difficulty is finding the 3 circles.
+					This was from the 1996 Chinese National Olympiad.
+				</p>
+			</div>
+
+		</div>
+		
+		<br>
+		
+		<div class = "math">
 			<h1 style = "font-family: Trebuchet, Sans-serif;"> Math Post 2 </h1>
 			<h5 style = "font-family: Trebuchet, Sans-serif;"> July 26, 2019 <br> By Bony </h5>
 			
-			<a class = "hideText" onclick="unhide()">Clique me to reveal hidden text</a>
+			<a class = "hideText" onclick="unhide('hidden')">Clique me to reveal hidden text</a>
 
 			<div class = "hidden" id="hidden" style= "display: none">
 				<p>
@@ -120,14 +245,16 @@
 		</form>
 		
 		<script>
-		function unhide() {
-		  var x = document.getElementById("hidden");
+		function unhide(divClass) {
+		  var x = document.getElementById(divClass);
 		  if (x.style.display === "none") {
 			x.style.display = "block";
 		  } else {
 			x.style.display = "none";
 		  }
 		}
+		
+			
 		</script>
 		
 	</body>

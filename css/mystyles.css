@@ -69,7 +69,8 @@ body {
 .hidden {
 	margin: 5px;
 	padding: 10px;
-	background: rgba(150,150,150,0.3); 
+	background: rgba(150,150,150,0.3);
+	overflow: auto;
 }
 
 .vertical-menu {
