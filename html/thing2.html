@@ -42,6 +42,57 @@
 		<br>
 		
 		<div class = "math">
+			<h1 style = "font-family: Trebuchet, Sans-serif;"> An Incredibly Nice Application of Generating Functions </h1>
+			<h5 style = "font-family: Trebuchet, Sans-serif;"> October 23, 2019 <br> By Bony </h5>
+			
+			I know I said physics next but I wanted to share my solution to Putnam 2001 A2, which I found 2 weeks ago.
+			
+			<br>
+			<br>
+			
+			1. You have coins \(C_1, C_2, \ldots , C_n\). For each \(k\), \(C_k\) is biased so that, when tossed, it has probability \(1/(2k + 1)\) 
+			of falling heads. If the \(n\) coins are tossed, what is the probability that the number of heads is odd?
+			Express the answer as a rational function of \(n\).
+			
+			<br>
+			
+			<a class = "hideText" onclick="unhide('solp')">Solution</a>
+			<div class = "hidden" id="solp" style= "display: none">
+				<p>
+					We claim that the desired probability is $$P_n = \frac{n}{2n+1}.$$
+					If we take \(x\) to represent tossing a head, the generating function for \(C_k\) is $$f_k(x) = \frac{1}{2k+1}(x+2k).$$ Hence the
+					generating function for tossing all \(n\) coins is $$F_n(x) = \prod_{k=1}^{n}f_k(x) =  \prod_{k=1}^{n} \frac{1}{2k+1}(x+2k).$$
+					We seek the sum of all the coefficients of the odd powers of \(x\) in \(F_n(x)\). We can do this by evaluating $$\frac{F_n(1)-F_n(-1)}{2}$$ 
+					because by the nature of polynomials, \(F_n(1)\) is the sum of the coefficients and \(F_n(-1)\) is the sum of the coefficients with all 
+					odd	powers flipped. Thus, 
+					\begin{align*}
+						P_n &= \frac{(3)(5)\cdots(2n+1) - (1)(3)\cdots(2n-1)}{2(3)(5)\cdots(2n+1)} \\
+						&= \frac{(2n+1)-1}{2(2n+1)} \\
+						&= \frac{n}{2n+1}.
+					\end{align*}
+					
+			</div>
+			<br>
+			<a class = "hideText" onclick="unhide('remp')">Remark</a>
+			<div class = "hidden" id="remp" style= "display: none">
+				<p>
+					I say this is an incredibly nice application for the following reasons: normally, generating functions as applied to enumerative combinatoricsare
+					are associated with laborious expansion of terms, and also we always think of \(x\) as a "placeholder variable" that isn't meant to be evaluated.
+					But in this case, neither of those are true. We use the extra structure provided by polynomials to evaluate the sum of all the odd powered coefficients,
+					which I thought was cool.
+					<br>
+					The motivation for using generating functions actually came from doing casework. For example, take \(n=3\). I noticed that the probability
+					to toss 1 head  is /(\frac{(1)(4)(6)+(2)(1)(6)+(2)(4)(1)}{(3)(5)(7)}\) and the probability of tossing 3 heads is \(\frac{1}{(3)(5)(7)}\). The 
+					symmetric sums reminded me of Vieta's formulas on a polynomial with roots \(2, 4, 6, \ldots\), and the rest fell into place. Overall a 
+					pretty nice problem.
+				</p>
+			</div>
+			
+		</div>
+		<br>
+		
+		
+		<div class = "math">
 			<h1 style = "font-family: Trebuchet, Sans-serif;"> Math Post 3 </h1>
 			<h5 style = "font-family: Trebuchet, Sans-serif;"> July 28, 2019 <br> By Bony </h5>
 			
